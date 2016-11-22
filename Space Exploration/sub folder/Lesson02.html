@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 and CSS3 Fundamentals</title>  
+</head>
+<body>
+
+<p><a href="../Space Exploration.html">Return to the previous document</a></p>
+
+<header>
+
+  <hgroup>
+    <h1>Channel9</h1>
+    <h2>HTML5 and CSS3 Fundamentals</h2>
+  </hgroup>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<section>
+
+<article>
+
+<h1>Background Every Web Developer Needs to Know</h1>
+
+<h2>Introduction</h2>
+
+<p>In this article I'll describe the World Wide Web from a high level 
+perspective, focusing on how a web page is request and delivered from a 
+web server to a web browser.  Then, I want to talk about web browsers,
+how they interpret the HTML you write, differences between browsers, what
+are standards and to paraphrase the old joke "if Standards are so great,
+why are there so many of them?"  Finally, I'll talk about the thought
+process behind HTML% and CSS3, why they were introduced and what they
+hope to achieve.</p>
+
+<h2>A Brief Technical Overview of the World Wide Web</h2>
+
+<p>The World Wide Web started out as a means for sharing scientific
+resources like research documentation between govermental and academic
+institutions,  It took time for the technologies and practices to evolve
+beyond its original purpose.</p>
+
+<p>From a technical perspective, the World Wide Web is comprised of 
+several technologies ... first, it involves a simple markup (the Hyper-
+text Markup Language, or HTML) to both structure and format textual
+information.  When first introduced its claim to fame was the hyperlink 
+which allowed the publisher of a document to add a link to other research
+papers available from accross the world, Creating a virtual web of 
+information (thus, the name).  Second, on or more interlinked pages are 
+published to a server that is connected to an open network which we know
+today as the Internet.</p>
+
+<p>A protocol was devised that specialized in allowing a 
+request/response-style communication between two computers.  In other 
+words, one uuser requests a document by typing an address for a document 
+into a special program called a web browser, and the web browser packages
+up that request and sends it out into the network.  The request takes the 
+form of a specially formatted packet of data.  You can think of this 
+packet of information like a self-addressed stamped envelope --
+containing both the address of the information requested and the address
+where that information should be sent back to.  This specially formatted 
+packet is known as Hyper-text Transfer Protocol, or rather, HTTP, and for 
+simplicity's sake you can think of it merely as an electronic envelope.  
+See Figure 1 for the types of information sent in the HTTP Request and 
+Http Response messages.</p>
+
+<figure>
+  <ing src="http-message.gif" alt="A diagram of the parts of an HTTP Message">
+<figcaption>Figure 1.  The HTTP Request and Response messages contains important 
+information that allows communication back and forth between the client 
+and the server.
+</figcaption>
+</figure>
+
+<p>The HTTP request message is routed through a series of networks wires 
+and routers (i.e., devices that know how to forward HTTP messages closer
+to their destination) spanning the globe using (ideally) the shortest 
+route possible until it arrives at its destination, the web server at the 
+address the requestor typed into the web browser.  The web server 
+responds to the request by locating the requested document or resource
+(in the figure, the index.html file), packaging it up using the same HTTP
+style envelope, then sending the requested document back on to the network.  
+The connection would only take a fraction of a second and once the computer 
+served up the request, it would not retain any information about that request 
+in its memory.  See Figure 2 for a diagram of interactivity between the client
+and server computers.</p>
+
+<figure>
+  <ing src="www-diagram.gif" alt="A diagram of route from the user request to the web server and 
+back again">
+  <figcaption>Figure 2.  (1) The HTTP Reques is (2) routed across the internet to 
+the (3) server which serves the (4) requested file back in the body of an HTTP 
+Response message.  (5) The HTTP Response is routed across the internet to the 
+original requestor.  (6) The requested file is parsed and displayed in the user's 
+web browser.
+</figcaption>
+</figure>
+
+<p>Once the requested document is delivered through the netowrk back to requestor, 
+that document is loaded into the web browser.  The browser parses through the HTML 
+and decides how to render (or rather, display) its content and appearance on the 
+computer screen.</p>
+
+<h3>What Are Domain Names?</h3>
+
+<p>The request that users type into web browsers originally looked something 
+like this:<br>
+<br>
+http://157.123.23.44/index.htm</p>
+
+<p>Why the series of numbers? Each computer on this network was assigned an address, 
+called an Internet Protocol Address, or IP Address.  This was assigned through a 
+lower-level protocol called Transmission Control Protocol/Internet Protocol, or rather, 
+TCP/IP.  It was the foundational technology that allowed requests to be routed to the 
+appropriate server that contained a given resource, or rather, web page.  However, 
+because the IP address for a computer would change occasionally for a given computer or 
+institution, they devised a system called the Domain Name System, or rather, the DNS, to 
+turn a friendly name like:<br>
+<br>
+mit.edu<br> 
+<br>
+... into the actual "location", like:<br>
+<br>
+18.72.0.3.</p>
+
+<p>A system of top-level Domain Names was created ... .deu for educational institutions, 
+.mil for Military, .gov for Government, .net for Network related resources, .org for 
+Non-profit organizations, .com for Commercial organizations, etc.  Later, other countries 
+and a plethora of top-level domains were added and others for commercial and other 
+interests.</p>  
+
+<p>More recently, these two responsibilities - of structure and presentation - have been
+split in two ... HTML should define the structure of the document, and Cascading Style 
+Sheets should control the presentation, or rather, the style or aesthetic quantities of a 
+web page.  We'll see how this separation of responsibilities plays out throughout this 
+course.</p>
+
+<p>One final topic I want to talk about that affects modern web development is the 
+implementations of various web browsers.  As you'll recall, once the requested web page has 
+been returned, it will be parsed by a web browser then displayed on screen.</p>
+
+<ol>
+<li>First of all, hopefully you now have an answer to the question 
+everyone
+first starting ou asks: "why the heck did they make URLs so convoluted?
+Wouldn't it be easier to just type in 'microsoft' instead of 
+'http://www.microsoft.com'?"  There's an evolution of technologies, and 
+furthermore, it was never intended for use by the masses.  At some point
+commercialized and individual access to the internet dwarfed the intended
+use, however the technologies created 30 years ago are still in 
+play.</li>
+
+<li>Second, hopefully you will begin see the purpose of things like http://
+... in which you are saying you want to access a specific channel of 
+traffic, HTTP, or rather, World Wide Web traffic, as opposed to FTP (File
+Transfer Protocol) for working with large files, SMTP (Simple Mail
+Transfer Protocol) for sending email, and so on.</li>
+
+<li>Third, hopefully you see the purpose of .com, .edu, .net and so on ... at 
+least, you understand the original purpose, and you understand how those 
+domain names are translated into the actual IP Addresses that are 
+utilized by routers to move traffic around the internet to it's intended 
+destination.</li>
+</ol>
+
+<h2>One Final Note About Our Overview</h2>
+
+</article>
+
+<article>
+
+<h1>How Web Browsers Parse HTML</h1>
+
+<ul>
+<li>Trident, the web browser engine from Internet Explorer, is used by many
+applications on the Microsoft Windows platform, such as netSmart, Outlook 
+Express, some versions of Microsoft Outlook, and the mini-browsers in 
+Winamp and RealPlayer.</li>
+
+<li>KDE's open-source KHTML engine is used in KDE's Konqueror web browser and 
+was the basis for WebKit, the rendering engine in Apple's Safari and 
+Google's Chrome web browsers.</li>
+
+<li>Gecko, the Mozilla project's open-source web browser engine, is used by a
+variety of products derived from the Mozilla code base, including the Firefox 
+web browser, the Thunderbird e-mail client, and SeaMonkey internet suite.</li>
+</ul> 
+
+<asideThere are four majar parsing and rendering engines that are popular today.</p>
+
+&lt;!DOCTYPE html&gt;
+
+<h2>Conclusion</h2>
+
+<p>Hopefully you can see the issues surrounding HTML% and CSS3 with regards to their 
+support by various versions and vendors of web browsers and two different thought
+processes on how to incorporate HTML% into your own work.</aside>
+
+</article>
+</section>
+
+<footer>
+
+Copyright &copy; 2012-2014 Bob Tabor
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</footer>
+</body>
+</html>
